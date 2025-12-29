@@ -272,5 +272,6 @@ app.post("/otel_sil", (req, res) => {
 
 
 app.listen(3005, () => {
-  console.log("Server çalışıyor: http://localhost:3000");
+  console.log("Server çalışıyor: http://localhost:3005");
+
 });
