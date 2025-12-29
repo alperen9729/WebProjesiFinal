@@ -6,7 +6,10 @@ const db = mysql_2.createConnection({
 }); 
 
 
+http://localhost:3005/
+
      Admin Paneli
 
 Kullanıcı Adı : admin
+
 Şifre : admin
