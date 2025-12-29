@@ -263,15 +263,21 @@ app.post("/otel_ekle", (req, res) => {
 
 
 app.post("/otel_sil", (req, res) => {
+  const id = req.body.id;
 
-   const id = req.body.id;
-   db.query("DELETE FROM oteller WHERE id = ?",[id]);
-   res.redirect("/otel_listele");
-    
+  db.query("DELETE FROM oteller WHERE id = ?", [id], (err, result) => {
+    if (err) {
+      return res.send("Oda bir müşteri tarafından kiralanmış.");
+    }
+
+    res.redirect("/otel_listele");
+  });
 });
+
 
 
 app.listen(3005, () => {
   console.log("Server çalışıyor: http://localhost:3005");
 
 });
+
